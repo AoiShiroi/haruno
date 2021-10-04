@@ -17,5 +17,5 @@ Date: ${json.result.date}
 }
 handler.help = ['zippyshare']
 handler.tags = ['downloader']
-handler.command = /^zippyshare$/i
+handler.command = /^(zippyshare|)$/i
 module.exports = handler
