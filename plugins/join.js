@@ -1,11 +1,10 @@
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 
-let handler = async (m, { conn, text, usedPrefix, args }) => {
+let handler = async (m, { conn, text, usedPrefix, args, command,  }) => {
     let user = db.data.users[m.sender]
     if (user.joincount === 3 ) throw 'Anda sudah melebihi batas maksimal memasukkan bot sebagai user premium.'
-    user.joincount += 1
     m.reply(`Joincount mu: ${user.joincount}/3`)
-    if (!args[0]) throw 'Masukkan link group'
+    if (!args[0]) throw `Masukkan link group. Contoh`
     if (!args[1]) throw 'Masukkan jumlah hari'
     if (args[1] > 30) throw `Wee.. jan banyak banyak lah`
     let [_, code] = args[0].match(linkRegex) || []
@@ -17,6 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, args }) => {
         if (now < global.db.data.chats[res.gid].expired) global.db.data.chats[res.gid].expired += jumlahHari
         else global.db.data.chats[res.gid].expired = now + jumlahHari
     })
+    user.joincount += 1
     conn.send3Button(res.gid, `
 *${conn.user.name}* adalah bot whatsapp yang dibangun dengan Nodejs, *${conn.user.name}* diundang oleh @${m.sender.split`@`[0]}
     

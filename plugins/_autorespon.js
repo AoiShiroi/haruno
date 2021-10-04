@@ -28,14 +28,15 @@ handler.all = async function (m, { isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        this.send2Button(m.chat, `┌〔 Undang Bot ke Grup 〕
+        this.send3Button(m.chat, `┌〔 Undang Bot ke Grup 〕
 ├ 3 Hari / GRATIS 
 ├ 7 Hari / Rp7.000
 ├ 30 Hari / Rp10.000
+├ 2 Bulan / Rp15.000
 └────
 
-
-`.trim(), watermark, 'Pemilik Bot', ',owner', 'Cara memasukkan bot', '.how add', m)
+Silahkan ketik .sewa untuk mendapatkan informasi lebih lanjut.
+`.trim(), watermark, 'Pemilik Bot', ',owner', 'Cara memasukkan bot', '.how add', 'Sewa', '.sewa',m)
     }
 
     // salam
