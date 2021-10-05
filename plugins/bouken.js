@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let confirm = {}
 const fs = require('fs')
-let bouken = JSON.parse(fs.readFileSync(`./src/bouken.json`))
+let bouken = JSON.parse(fs.readFileSync(`./src/hilichurls.json`))
 let json = bouken[Math.floor(Math.random() * bouken.length)]
 async function handler(m, { conn, args, isROwner }) {
     if (m.sender in confirm) throw 'Kamu masih dalam proses konfirmasi!'
