@@ -7,7 +7,7 @@ async function handler(m, { conn, args, isROwner }) {
     if (m.sender in confirm) throw 'Kamu masih dalam proses konfirmasi!'
     try {
         let user = global.db.data.users[m.sender]
-        let foto = 'https://telegra.ph/file/ca645751bee63e563edda.jpg'
+        let foto = 'https://telegra.ph/file/356618ee42c6bc339790f.jpg'
         if (user.health < 20) return await conn.sendButtonImg(m.chat, await(await fetch(foto)).arrayBuffer(),'Naikan health kamu.\nHealth tidak boleh kurang dari 20.', watermark, 'HEALTH', `${usedPrefix}kenko`, m)
         if (!(m.sender in confirm)) {
             confirm[m.sender] = {
@@ -35,7 +35,7 @@ handler.before = async m => {
     try {
         if (/^serang$/i.test(txt)) {
             let result = `${Math.floor(Math.random() * 10)} ${pickRandom(['0', '1'])}`
-            if (result == 1) {
+            if (result === '1') {
                 let hatesa = 'https://telegra.ph/file/cad611016335cef7ac945.jpg'
                 await conn.send2ButtonImg(m.chat, await(await fetch(hatesa)).buffer(), `*SELAMAT KAMU MENANG*\n\nHadiah mu\nPrimogem: ${json.primogem}\nMora: ${json.mora}\nChara EXP: ${json.cxp}\nAdvanture EXP: ${json.axp}`, '©Haruno Bot - RPG', 'DASHBOARD', '.dashboard', 'PROFILE', '.my', m)
                 user.primogem += `${json.primogem}`
@@ -43,7 +43,7 @@ handler.before = async m => {
                 user.cxp += `${json.cxp}`
                 user.axp += `${json.axp}`
                 user.health -= 20
-            } else {
+            } else if (result === '0'){
                 await conn.send2Button(m.chat, `Yahh.... kamu kalah melawan ${json.name}, -80 health\nSemoga beruntung lain waktu.\nTips: pastikan health mu banyak dan level mu lebih tinggi daripada musuh.`, '©Haruno Bot - RPG', 'COBA LAGI', '.advanture', 'HEALTH', '.kenko', m)
                 user.health -= 80
             }
