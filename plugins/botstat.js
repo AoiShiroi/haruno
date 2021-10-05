@@ -1,3 +1,4 @@
+let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
     let { anon, anticall, antispam, antitroli, backup, jadibot, groupOnly, nsfw } = global.db.data.settings[conn.user.jid]
     const chats = conn.chats.all()
