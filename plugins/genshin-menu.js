@@ -3,6 +3,7 @@ let { MessageType } = require('@adiwajshing/baileys')
 let handler = async(m, { conn }) => {
     let res = await fetch('https://raw.githubusercontent.com/FadliDarmawan/natsukawa/main/event.json')
     let json = await res.json()
+    let name = conn.getName(m.sender)
     let kamisato = `
 Selamat datang, ${name} di menu game Haruno Bot!
 
