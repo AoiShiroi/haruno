@@ -1,1 +1,1 @@
-   web: node . --db 'https://json-server.fadlidarmawan.repl.co/'
+   web: node . --server
