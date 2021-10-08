@@ -21,7 +21,7 @@ OVO: 628112958665
         buttonText: 'List Harga',
         description: kamisato,
         sections:  [{title: "Silahkan di pilih", rows: [
-        {title: '2 Bulan', description: "Rp15.000\nSewa bot tanpa batasan waktu.", rowId:".masuk"},
+        {title: 'Premium', description: "Rp15.000\nDapatkan fitur premium.", rowId:".premium"},
         {title: '1 Bulan', description: "Rp10.000\nSewa bot selama 1 bulan.", rowId:".masuk"},
         {title: '1 Minggu', description: "Rp7.000\nSewa bot selama 1 minggu.", rowId:".masuk"},
         {title: 'Trial', description: "GRATIS\nBot gratis 3 Hari.", rowId:".join"},
