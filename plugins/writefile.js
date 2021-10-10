@@ -34,3 +34,4 @@ handler.command = /write$/i
 handler.tags = ['owner']
 handler.owner = true
 handler.help = ['write']
+module.exports = handler
