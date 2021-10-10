@@ -8,13 +8,14 @@ let handler = async (m, { conn }) => {
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
 
-    conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer, `
+    conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer(), `
 ┌─〔 Info Haruno Bot 〕
 ├ Nama (Resmi): Haruno Bot Whatsapp
 ├ Dipoperasikan sejak: 12 Juli 2021 (12 Februari 2021)
-├ Owner: Fadli
+├ Pemilik: Fadli
 ├ Bahasa: Nodejs
 ├ Run: Heroku
+├ sc: Haruno
 └────
 
 ┌─〔 Status 〕
