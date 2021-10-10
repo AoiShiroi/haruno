@@ -1,4 +1,5 @@
 let fs = require('fs')
+let fetch = require('node-fetch')
 let handler = async(m, { conn, text, usedPrefix, command }) => {
     const json = JSON.parse(fs.readFileSync('./src/toko.json'))
     let [t, n] = text.split`|`

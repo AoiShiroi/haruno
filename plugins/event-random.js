@@ -9,9 +9,10 @@ Nama: ${json.name}
 
 JID: ${json.jid}
 
-Mentioned*: @${who.replace(/@.+/,'')}
+Mentioned: @${who.replace(/@.+/,'')}
 `.trim()
-    await conn.sendButtonLoc(m.chat, await(await fetch(image)).buffer(), caption, 'Menu', '.?', m)
+    await conn.sendButtonLoc(m.chat, await(await fetch(image)).buffer(), caption, watermark,'Menu', '.?', m, { contextInfo: { mentionedJid: [who] } })
 }
 handler.command = /eventrandom$/i
+
 module.exports = handler 
