@@ -28,7 +28,7 @@ handler.all = async function (m, { isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        this.send3Button(m.chat, `┌〔 Undang Bot ke Grup 〕
+        conn.send3Button(m.chat, `┌〔 Undang Bot ke Grup 〕
 ├ 3 Hari / GRATIS 
 ├ 7 Hari / Rp7.000
 ├ 30 Hari / Rp10.000
@@ -58,9 +58,9 @@ Silahkan ketik .sewa untuk mendapatkan informasi lebih lanjut.
             await global.db.write()
             this.reply(global.owner[0] + '@s.whatsapp.net', `Database, Premium, Event: ${date}`, null)
             this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./database.json'), 'database.json', '', 0, 0, { mimetype: 'application/json' })
+            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/premium.json'), 'premium.json', '', 0, 0, { mimetype: 'application/json' })
+            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/event.json', 'event.json', '', 0, 0, { mimetype: 'aplication.json' }))
             setting.backupDB = new Date() * 1
-            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/premium.json'), 'premium.json', '', 0, 0, { mimetype: 'application/js' })
-            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/event.json', 'event.json', '', 0, 0, { mimetype: 'aplication.jsom' }))
         }
     }
 

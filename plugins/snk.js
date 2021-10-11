@@ -23,13 +23,15 @@ Syarat Ketentuan Haruno Bot
 1. Bot akan keluar dari group apabila sudah waktunya keluar.
 2. Harunobot dapan mem-ban users secara sepihak terlepas dari users salah atau tidak.
 3. Harunobot *tidak akan bertanggungjawab atas apapun yang users lakukan terhadap fitur bot.*
-4. Harunobot akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
-5. Harunobot bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
+4. Jika semisalkan bot di keluarkan dari group, maka masa periode di anggap sudah berakhir. Jika bot di keluarkan oleh owner atas 1 2 alasan semisal spam dari user maka silahkan kontak owner. [078]
+5. Harunobot akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
+6. Harunobot bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
+7. Jika user dalam masa penggunaan, maka secara otomatis user telah men-setujui peraturan dan syarat ketentuan Harunobot
 
 -Haruno
 -Fadli
 
-Peraturan: 1 Oktober 2021
+Peraturan: 11 Oktober 2021
 `.trim()
     conn.send2ButtonLoc(m.chat, await(await fetch(image)).buffer(), teks, watermark, 'Menu', '.menu', 'Owner', '.owner', m)
 }
