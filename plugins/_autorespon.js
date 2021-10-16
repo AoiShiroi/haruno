@@ -60,7 +60,7 @@ Silahkan ketik .sewa untuk mendapatkan informasi lebih lanjut.
             this.reply(global.owner[0] + '@s.whatsapp.net', `Database, Premium, Event: ${date}`, null)
             this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./database.json'), 'database.json', '', 0, 0, { mimetype: 'application/json' })
             this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/premium.json'), 'premium.json', '', 0, 0, { mimetype: 'application/json' })
-            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/event.json', 'event.json', '', 0, 0, { mimetype: 'aplication.json' }))
+            this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./src/event.json'), 'event.json', '', 0, 0, { mimetype: 'application/json' })
         }
     }
 

@@ -9,6 +9,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
     let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
     m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : global.wait)
+    await conn.sendButton(m.chat, 'Coba server API jika file tidak muncul dengan cara menekan tombol di bawah.', watermark, 'Server API', `.ytv2 ${args[0]}`, m)
     let _thumb = {}
     try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
     catch (e) { }
