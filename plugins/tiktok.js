@@ -12,9 +12,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   await conn.sendFile(m.chat, json.nowm, '', `${json.caption}\n\n© Haruno`, m)
 
 }
-handler.help = ['tiktok'].map(v => v + ' <url>')
+handler.help = ['tiktok2'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tiktok)$/i
+handler.command = /^(tiktok2)$/i
 
 handler.limit = true
 

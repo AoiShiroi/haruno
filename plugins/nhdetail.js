@@ -21,9 +21,8 @@ Button tidak work untuk pesan sementara/wa mod silahkan pakai ${usedPrefix}nhpdf
 `.trim()
     conn.sendButtonImg(m.chat, await (await fetch(json.result.image[0])).buffer(), ayaka, watermark, 'Download', `.nhd ${args[0]}`, m)
 }
-handler.command = /^nh$/i
+handler.command = /^nh2$/i
 handler.tags = ['internet']
-handler.help = ['nh <code>']
-handler.nsfw = true
+handler.help = ['nh2 <code>']
 module.exports = handler
 //Haruno

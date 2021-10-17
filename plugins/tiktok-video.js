@@ -6,7 +6,7 @@ let handler = async(m, { conn, args, usedPrefix, command }) => {
     let json = await res.json()
     m.reply(global.wait)
     let thumb = await(await fetch(json.result.thumbnail)).buffer()
-    await conn.sendFile(m.chat, json.result.link, 'video.mp4', 0, m, 0, { thumbnail: thumb })
+    await conn.sendFile(m.chat, json.result.link, 'video.mp4', null, m, 0 )
 }
 handler.command = /^(tiktok-video|tiktokv|ttv)$/i
 handler.help = ['tiktok-video <url>']

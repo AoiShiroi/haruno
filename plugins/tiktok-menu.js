@@ -12,7 +12,7 @@ Description: ${json.result.description}
 `.trim()
     await conn.send2ButtonImg(m.chat, await(await fetch(json.result.thumbnail)).buffer(), nrm, watermark, 'Audio', `.tiktoka ${args[0]}`, 'Video', `.tiktokv ${args[0]}`, m)
 }
-handler.command = /^tiktok2$/i
+handler.command = /^tiktok$/i
 handler.tags = ['downloader']
-handler.help = ['tiktok2 <url>']
+handler.help = ['tiktok <url>']
 module.exports = handler

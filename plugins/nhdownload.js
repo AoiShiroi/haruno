@@ -12,9 +12,6 @@ handler.help = ['nhpdf'].map(v => v + ' <code>')
 
 handler.tags = ['nsfw']
 handler.command = /^(nhpdf|nhd)$/i
-handler.nsfw = true
-
-handler.limit = 1
 
 module.exports = handler
 
