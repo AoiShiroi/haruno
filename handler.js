@@ -52,6 +52,8 @@ module.exports = {
           if (!isNumber(user.cxp)) user.cxp = 0
           if (!isNumber(user.axp)) user.axp = 0
           if (!isNumber(user.health)) user.health = 100
+          if (!isNumber(user.resin)) user.resin = 160
+          if (!('pokemon' in user)) user.pokemon = ''
         } else global.db.data.users[m.sender] = {
           exp: 0,
           limit: 10,
@@ -75,6 +77,8 @@ module.exports = {
           cxp: 0,
           axp: 0,
           health: 100,
+          pokemon: '',
+          resin: 160,
         }
 
         let chat = global.db.data.chats[m.chat]
