@@ -10,7 +10,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
 Title: *${json.result.title}*
 Filesize: *${json.result.link.size}*
 `.trim()
-    await conn.sendFile(m.chat, json.result.link.link, `${json.result.id}.mp4`, m, false)
+    await conn.sendFile(m.chat, json.result.link.link, `${json.result.id}.mp4`, nrm, m, false)
 }
 handler.commanfd = /^(ytv2|ytmp42)$/i
 handler.tags = ['downloader']
