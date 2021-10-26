@@ -229,7 +229,6 @@ Selamat menggunakan Harunobot
           "listType": "SINGLE_SELECT",
           "sections": [
             { 
-              "title": "Menu dan Informasi Bot",
               "rows": [
                 {
                   "title": "📖 ┃ Rules",
@@ -446,7 +445,7 @@ Selamat menggunakan Harunobot
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), watermark, 'Pemilik Bot', '.owner', 'Donasi', '.donasi', m, { contextInfo:{externalAdReply: {title: 'Haruno', sourceUrl: 'https://github.com/FadliDarmawan/haruno', body: `Haruno Bot source code. You can contribute me on github.`, thumbnail: gambar}}}, m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), watermark, 'Pemilik Bot', '.owner', 'Donasi', '.donasi', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
