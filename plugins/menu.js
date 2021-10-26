@@ -158,11 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let gc1 = '628112958665-1625393837@g.us' //change the group JID
-    let gc2 = '628112958665-1628163967@g.us' //change the group JID
-    let gc3 = '628112958665-1571053173@g.us' //change the group JID
-    let _gc1 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc1)
-    let _gc2 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc2)
-    let _gc3 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc3)
+    let _gc3 = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(gc1)
     let tulisan = `
 ${ucapan()} ${name}. 元気でね！
 
@@ -171,12 +167,6 @@ ketik "Click Here!" untuk melihat list.
 
 Join group Official Harunobot:
 *Group 1*
-${_gc1}
-
-*Group 2*
-${_gc2}
-
-*Group 3*
 ${_gc3}
 
 Selamat menggunakan Harunobot
