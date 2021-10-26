@@ -215,10 +215,11 @@ Selamat menggunakan Harunobot
         "listMessage": {
           "title": tulisan,
           "description": "© Haruno",
-          "buttonText": "Klik Disini",
+          "buttonText": "Click Here!",
           "listType": "SINGLE_SELECT",
           "sections": [
             { 
+              "title": "Informasi Bot",
               "rows": [
                 {
                   "title": "📖 ┃ Rules",
@@ -236,7 +237,10 @@ Selamat menggunakan Harunobot
                   "title": "📢 ┃ ChangeLog",
                   "description": "Perubahan/Update pada Harunobot.",
                   "rowId": ".changelog"
-                },
+                }
+              ],
+              "title": "List Menu",
+              "rows": [
                 {
                   "title": `🧾┃All Commands`,
                   "description": "Semua perintah pada bot.",
@@ -435,7 +439,7 @@ Selamat menggunakan Harunobot
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), watermark, 'Pemilik Bot', '.owner', 'Donasi', '.donasi', m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), watermark, 'Pemilik Bot', '.owner', 'Donasi', '.donasi', m, { contextInfo:{externalAdReply: {title: 'Haruno', sourceUrl: sumberurl, body: deskripsiurl, thumbnail: gambar}}})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
