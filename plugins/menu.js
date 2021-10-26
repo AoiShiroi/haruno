@@ -180,7 +180,6 @@ ${_gc2}
 ${_gc3}
 
 Selamat menggunakan Harunobot
-*%npmname@^%version*
 `.trim()
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
@@ -230,7 +229,7 @@ Selamat menggunakan Harunobot
           "listType": "SINGLE_SELECT",
           "sections": [
             { 
-              "title": "Informasi Bot",
+              "title": "Menu dan Informasi Bot",
               "rows": [
                 {
                   "title": "📖 ┃ Rules",
@@ -248,10 +247,7 @@ Selamat menggunakan Harunobot
                   "title": "📢 ┃ ChangeLog",
                   "description": "Perubahan/Update pada Harunobot.",
                   "rowId": ".changelog"
-                }
-              ], 
-            "title": "Daftar Menu",
-            "rows": [
+                },
                 {
                   "title": `🧾┃All Commands`,
                   "description": "Semua perintah pada bot.",
