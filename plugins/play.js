@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = async(m, { conn, usedPrefix, text, command }) => {
     if(!text) throw `Uhm... Mau cari apa?\n\nContoh: ${usedPrefix + command} Opening kimetsu no yaiba`
     let res = await fetch(global.API('lolhum', '/api/ytplay', { query: text }, 'apikey'))
-    let json = await res.json
+    let json = await res.json()
     if(!res.ok) throw await res.text
     let thumb = await(await fetch(json.result.info.thumbnail)).buffer()
     let caption = `
