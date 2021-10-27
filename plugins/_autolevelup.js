@@ -27,7 +27,7 @@ handler.before = async function (m) {
                 if (before !== user.level) {
                         let rank = 'https://telegra.ph/file/a70ec1ca7e65ec12545df.jpg'
                         {
-                                        await this.sendButtonLoc(m.chat, `@${who.split`@`[0]} Level Up!\n_${before}_ -> ${user.level}`.trim(), await (await fetch(rank)).buffer(), watermark, 'Daily', ',daily', m, { contextInfo:{externalAdReply: {title: 'Haruno', sourceUrl: sumberurl, body: deskripsiurl, thumbnail: thumb}}, contextInfo: { mentionedJid: [who]}}, m)
+                                        await this.sendButtonImg(m.chat, `@${who.split`@`[0]} Level Up!\n_${before}_ -> ${user.level}`.trim(), await (await fetch(rank)).buffer(), watermark, 'Daily', ',daily', m, { contextInfo:{externalAdReply: {title: 'Haruno', sourceUrl: sumberurl, body: deskripsiurl, thumbnail: thumb}}, contextInfo: { mentionedJid: [who]}}, m)
                                 }
                 }
         }

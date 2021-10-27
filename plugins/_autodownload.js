@@ -19,7 +19,7 @@ handler.all = async function (m, { isPrems }) {
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
         await m.reply(wait)
-        m.reply(util.format(json))
+        // m.reply(util.format(json))
         await this.sendFile(m.chat, json.result.audio, 'tiktok.mp3', 0, m)
         await this.sendFile(m.chat, json.result.link, 'tiktok.mp4', json.result.title, m, 0)
     }
