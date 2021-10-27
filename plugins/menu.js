@@ -219,7 +219,7 @@ Selamat menggunakan Harunobot
           "listType": "SINGLE_SELECT",
           "sections": [
             { 
-              "title": "Informasi Bot",
+              "title": "Informasi dan List Menu Harunobot",
               "rows": [
                 {
                   "title": "📖 ┃ Rules",
@@ -237,10 +237,7 @@ Selamat menggunakan Harunobot
                   "title": "📢 ┃ ChangeLog",
                   "description": "Perubahan/Update pada Harunobot.",
                   "rowId": ".changelog"
-                }
-              ],
-              "title": "List Menu",
-              "rows": [
+                },
                 {
                   "title": `🧾┃All Commands`,
                   "description": "Semua perintah pada bot.",
@@ -433,7 +430,7 @@ Selamat menggunakan Harunobot
       exp: exp - min,
       maxexp: xp,
       totalexp: exp,
-      xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`,
+      xp4levelup: max - exp <= 0 ? `Siap un7utuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore

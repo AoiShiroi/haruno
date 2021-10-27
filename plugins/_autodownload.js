@@ -14,13 +14,14 @@ handler.all = async function (m, { isPrems }) {
 
     let url = m.text.split(/\n| /i)[0]
 
-    if (/^.*tiktok/i.test(m.text)) {
-        // let res = await fetch(API('hardianto', '/api/download/tiktok', { url }, 'apikey'))
-        // if (!res.ok) return m.reply(eror)
-        // let json = await res.json()
-        // await m.reply(wait)
-        // m.reply(util.format(json))
-        // await this.sendFile(m.chat, json.nowm, '', watermark, m)
+    if (/^.*vt.tiktok.com/i.test(m.text)) {
+        let res = await fetch(global.API('lolhum', '/api/tiktok', { url }, 'apikey'))
+        if (!res.ok) return m.reply(eror)
+        let json = await res.json()
+        await m.reply(wait)
+        m.reply(util.format(json))
+        await this.sendFile(m.chat, json.result.audio, 'tiktok.mp3', 0, m)
+        await this.sendFile(m.chat, json.result.link, 'tiktok.mp4', json.result.title, m, 0)
     }
 
     if (/^.*cocofun/i.test(m.text)) {

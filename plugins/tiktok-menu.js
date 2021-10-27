@@ -4,13 +4,15 @@ let handler = async(m, { conn, usedPrefix, args, command }) => {
     let res = await fetch(global.API('lolhum', '/api/tiktok', { url: args[0]}, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
-    m.reply(global.wait)
     let nrm = `
 Title: *${json.result.title}*
 Keywords: ${json.result.keywords}
 Description: ${json.result.description}
+
+${watermark}
 `.trim()
-    await conn.send2ButtonImg(m.chat, await(await fetch(json.result.thumbnail)).buffer(), nrm, watermark, 'Audio', `.tiktoka ${args[0]}`, 'Video', `.tiktokv ${args[0]}`, m)
+    await conn.sendFile(m.chat, json.result.link, 'video.mp4', nrm, m)
+    await conn.sendFile(m.chat, json.result.audio, 'audio.mp3', 0, m)
 }
 handler.command = /^tiktok$/i
 handler.tags = ['downloader']
