@@ -99,6 +99,7 @@ module.exports = {
           if (!('antiBadword' in chat)) chat.antiBadword = true
           if (!('viewonce' in chat)) chat.viewonce = true
           if (!('privatelink' in chat)) chat.privatelink = false
+          if (!('nsfw' in chat)) chat.nsfw = false
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
@@ -115,6 +116,7 @@ module.exports = {
           antiBadword: true,
           viewonce: true,
           privatelink: false,
+          nsfw: false,
         }
 
         let settings = global.db.data.settings[this.user.jid]
@@ -472,23 +474,23 @@ ketik *.on delete* untuk mematikan pesan ini
     ${desc}
     ketik *.off desc* untuk mematikan pesan ini
         `.trim()
-    this.sendButton(jid, caption, '', 'Matikan Deskripsi', ',off desc', { contextInfo: { mentionedJid: this.parseMention(caption) } })
+    this.sendButton(jid, caption, watermark, 'Matikan Deskripsi', ',off desc', { contextInfo: { mentionedJid: this.parseMention(caption) } })
 
   }
 }
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    owner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_',
-    premium: 'Perintah ini hanya untuk pengguna _*Premium*_',
-    group: 'Perintah ini hanya dapat digunakan di grup',
-    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi',
-    admin: 'Perintah ini hanya untuk *Admin* grup',
-    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini',
+    rowner: 'This command only can used by _*Owner!*_\nPerintah ini hanya dapat digunakan oleh _*Owner!_*.',
+    owner: 'This command only can used by _*Owner!*_\nPerintah ini hanya dapat digunakan oleh _*Owner!_*.',
+    mods: 'This command only can used by _*Moderator!*_\nPerintah ini hanya dapat digunakan oleh _*Moderator!*_',
+    premium: 'This command only can used by _*Premium Users.*_\nPerintah ini hanya dapat digunakan oleh _*User Premium.*_',
+    group: 'This command only can used in Group.\nPerintah ini hanya dapat digunakan di Group.',
+    private: 'This command only can used in Private Chat.\nPerintah ini hanya dapat digunakan di Chat Pribadi.',
+    admin: 'This command only can used by *Group Admin.*\nPerintah ini hanya dapat digunakan oleh *Admin Group.*',
+    botAdmin: 'Make the bot number as a group admin to use this command.\nJadikan bot sebagai admin untuk menggunakan perintah ini.',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Arif.19*',
-    nsfw: 'NSFW tidak aktif'
+    nsfw: 'NSFW doesnt active.\nNSFW tidak aktif.'
   }[type]
   if (msg) return m.reply(msg)
 }
