@@ -76,7 +76,7 @@ handler.all = async function (m, { isPrems }) {
         }).catch(_ => _)
     }
 
-    if (/^*youtu.be\//i.test(m.text)) {
+    if (/^https?:\/\/.*youtu/i.test(m.text)) {
         let results = await yts(url)
         let vid = results.all.find(video => video.seconds < 3600)
         if (!vid) return m.reply('Video/Audio Tidak ditemukan')
