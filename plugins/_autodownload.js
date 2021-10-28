@@ -76,7 +76,7 @@ handler.all = async function (m, { isPrems }) {
         }).catch(_ => _)
     }
 
-    if (/^https?:\/\/.*youtu/i.test(m.text)) {
+    if (/^https?:\/\/.*youtu.be/i.test(m.text)) {
         let results = await yts(url)
         let vid = results.all.find(video => video.seconds < 3600)
         if (!vid) return m.reply('Video/Audio Tidak ditemukan')
@@ -106,23 +106,6 @@ Youtube Downloader
 
 ${watermark}
 `.trim(), watermark, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
-    }
-    if (/^*youtube.com\/shorts\//i.test(m.text)) {
-        let res = await fetch(global.API('lolhum', '/api/ytreels/', { url }, 'apikey'))
-        let json = await res.json
-        if (!res.ok) return m.reply(error)
-        await m.reply(wait)
-        let thumb = await(await fetch(json.result.thumbnail)).buffer()
-        await this.sendFile(m.chat, thumb, '', `
-Youtube Short Downloader
-
-Title: *${json.result.title}*
-
-Tunggu sebentar bot sedang memproses file
-Note: Bot akan mengirim file Audio dan Video.
-${watermark}`.trim(), m)
-        await this.sendFile(m.chat, json.result.audio, 'audio.mp3', 0, m)
-        await this.sendFile(m.chat, json.result.video, 'video.mp4', watermark, m, 0, { thumbnail: thumb })
     }
 
 }
