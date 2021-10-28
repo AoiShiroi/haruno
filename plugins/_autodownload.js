@@ -76,7 +76,7 @@ handler.all = async function (m, { isPrems }) {
         }).catch(_ => _)
     }
 
-    if (/^https?:\/\/.*youtu/i.test(m.text)) {
+    if (/^*youtu.be/i.test(m.text)) {
         let results = await yts(url)
         let vid = results.all.find(video => video.seconds < 3600)
         if (!vid) return m.reply('Video/Audio Tidak ditemukan')
@@ -97,11 +97,32 @@ handler.all = async function (m, { isPrems }) {
         if (yt2 === false) return m.reply(eror)
         let { dl_link, thumb, title, filesize, filesizeF } = yt
         await this.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-*Judul:* ${title}
+Youtube Downloader
+
+*Title:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
+
+${watermark}
 `.trim(), watermark, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
+    }
+    if (/^*youtube.com\/shorts/i.test(m.text)) {
+        let res = await fetch(global.API('lolhum', '/api/ytreels/', { url }, 'apikey'))
+        let json = await res.json
+        if (!res.ok) return m.reply(error)
+        await m.reply(wait)
+        let thumb = await(await fetch(json.result.thumbnail)).buffer()
+        await this.sendFile(m.chat, thumb, '', `
+Youtube Short Downloader
+
+Title: *${json.result.title}*
+
+Tunggu sebentar bot sedang memproses file
+Note: Bot akan mengirim file Audio dan Video.
+${watermark}`.trim(), m)
+        await this.sendFile(m.chat, json.result.audio, 'audio.mp3', 0, m)
+        await this.sendFile(m.chat, json.result.video, 'video.mp4', watermark, m, 0, { thumbnail: thumb })
     }
 
 }

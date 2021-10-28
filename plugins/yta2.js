@@ -9,7 +9,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
 Title: *${json.result.title}*
 Filesize: *${json.result.link.size}*
 `.trim()
-    conn.sendFile(m.chat, json.result.link.link, `${json.result.id}.mp3`, null, m, false)
+    conn.sendFile(m.chat, json.result.link.link, `${json.result.id}.mp3`, m, 0)
 }
 handler.command = /^(yta2|ytmp32)$/i
 handler.help = ['ytmp32 <url> (server API)']
