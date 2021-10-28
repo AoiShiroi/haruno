@@ -76,7 +76,7 @@ handler.all = async function (m, { isPrems }) {
         }).catch(_ => _)
     }
 
-    if (/^*youtu.be/i.test(m.text)) {
+    if (/^*youtu.be\//i.test(m.text)) {
         let results = await yts(url)
         let vid = results.all.find(video => video.seconds < 3600)
         if (!vid) return m.reply('Video/Audio Tidak ditemukan')
@@ -107,7 +107,7 @@ Youtube Downloader
 ${watermark}
 `.trim(), watermark, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`)
     }
-    if (/^*youtube.com\/shorts/i.test(m.text)) {
+    if (/^*youtube.com\/shorts\//i.test(m.text)) {
         let res = await fetch(global.API('lolhum', '/api/ytreels/', { url }, 'apikey'))
         let json = await res.json
         if (!res.ok) return m.reply(error)
